@@ -127,10 +127,6 @@ BOARD_MAIN_PARTITION_LIST := system product vendor odm
 
 BUILD_WITHOUT_VENDOR := true
 
-TARGET_COPY_OUT_ODM := odm
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_VENDOR := vendor
-
 BOARD_PREBUILT_ODMIMAGE := $(DEVICE_PATH)/prebuilt/odm.img
 
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
@@ -139,7 +135,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_MAIN_PARTITION_LIST))
-$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
+$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 # Properties
