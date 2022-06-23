@@ -62,20 +62,15 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
 
-# Boot control HAL
+# Bootctrl
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-mtkimpl \
-    android.hardware.boot@1.2-mtkimpl.recovery
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctrl
+    bootctrl.default \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2.recovery
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
-    android.hardware.fastboot@1.1-impl-mock.recovery \
-    android.hardware.fastboot@1.0-impl-mtk \
-    android.hardware.fastboot@1.0-impl-mtk.recovery \
     fastbootd
 
 # Health
@@ -119,6 +114,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.3 \
+    android.hardware.usb.gadget@1.2
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-V1-ndk_platform
 
 # F2FS
 PRODUCT_PACKAGES += \
