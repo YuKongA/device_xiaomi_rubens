@@ -64,7 +64,7 @@ BOARD_USES_RECOVERY_AS_BOOT := false
 
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/android/common
-TARGET_KERNEL_CONFIG := vendor/gki_defconfig
+TARGET_KERNEL_CONFIG := gki_defconfig
 
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
